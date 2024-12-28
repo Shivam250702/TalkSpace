@@ -5,7 +5,8 @@ import Navigation from './components/shared/Navigation/Navigation';
 import Authenticate from './pages/authenticate/Authenticate';
 import Activate from './pages/activate/Activate';
 import Rooms from './pages/Rooms/Rooms';
-import useSelector from 'react-redux';
+import { useSelector } from 'react-redux';
+
 const isAuth = false;
 const user = {
   activated: false,
