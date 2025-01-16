@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# TalkSpace- A WebRTC Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Installation
 
-## Available Scripts
+1. Clone the repository:
+```
+git clone https://github.com/Shivam250702/TalkSpace.git
+```
+2. Install the dependencies:
+```
+cd frontend
+npm install
 
-In the project directory, you can run:
+cd backend
+npm install
+```
+3. Create a `.env` file in the root directory and add the following environment variables:
+```
+DB_URL=mongodb+srv://your-username:your-password@cluster0.0xjhv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+```
+4. Start the development server:
+```
+npm run start
+```
 
-### `npm start`
+## Usage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. The application provides the following API endpoints:
+   - `POST /api/send-otp`: Sends an OTP (One-Time Password) to the user's phone number.
+   - `POST /api/verify-otp`: Verifies the user's OTP.
+   - `POST /api/activate`: Activates the user's account after successful OTP verification.
+   - `GET /api/refresh`: Refreshes the user's authentication token.
+   - `POST /api/logout`: Logs out the user.
+   - `POST /api/rooms`: Creates a new room.
+   - `GET /api/rooms`: Retrieves a list of all rooms.
+   - `GET /api/rooms/:roomId`: Retrieves the details of a specific room.
+   - `GET /api/test`: Returns a simple JSON response.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. The application also includes the following actions:
+   - `JOIN`: Joins a user to a room.
+   - `LEAVE`: Removes a user from a room.
+   - `ADD_PEER`: Adds a new peer to the room.
+   - `REMOVE_PEER`: Removes a peer from the room.
+   - `RELAY_ICE`: Relays ICE (Interactive Connectivity Establishment) candidates between peers.
+   - `RELAY_SDP`: Relays SDP (Session Description Protocol) data between peers.
+   - `SESSION_DESCRIPTION`: Handles the session description.
+   - `ICE_CANDIDATE`: Handles the ICE candidate.
+   - `MUTE`: Mutes a user.
+   - `UNMUTE`: Unmutes a user.
+   - `MUTE_INFO`: Provides mute information.
 
-### `npm test`
+## Contributing
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature/your-feature`.
+3. Make your changes and commit them: `git commit -am 'Add some feature'`.
+4. Push to the branch: `git push origin feature/your-feature`.
+5. Submit a pull request.
 
-### `npm run build`
+## License
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This project is licensed under the [MIT License](LICENSE).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Testing
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+To run the tests, execute the following command:
+```
+npm test
+```
